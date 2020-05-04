@@ -30,3 +30,4 @@ a637c551a0da: Layer already exists
 f32868cde90b: Layer already exists
 0db06dff9d9a: Layer already exists
 1354b5b5df81: Pushed
+https://github.com/PyCQA/astroid/issues/626
