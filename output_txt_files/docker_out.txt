@@ -1,1 +1,117 @@
-<paste log output from Docker prediction, here>
+Sending build context to Docker daemon  1.242MB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 6f2efbbf4c9c
+Step 3/6 : COPY . app.py /app/
+ ---> 9752381bb0a1
+Step 4/6 : RUN pip install --upgrade pip &&    pip install --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in ffa4af74c220
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/54/2e/df11ea7e23e7e761d484ed3740285a34e38548cf2bad2bed3dd5768ec8b9/pip-20.1-py2.py3-none-any.whl (1.5MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-20.1
+Collecting Click==7.0
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+Collecting Flask==1.0.2
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+Collecting itsdangerous==1.1.0
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+Collecting MarkupSafe==1.1.1
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (27 kB)
+Collecting numpy==1.17.2
+  Downloading numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3 MB)
+Collecting pandas==0.24.2
+  Downloading pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+Collecting python-dateutil==2.8.0
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+Collecting pytz==2019.3
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+Collecting scipy==1.3.1
+  Downloading scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
+Collecting six==1.12.0
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+Collecting pylint
+  Downloading pylint-2.5.0-py3-none-any.whl (324 kB)
+Collecting astroid<=2.5,>=2.4.0
+  Downloading astroid-2.4.0-py3-none-any.whl (327 kB)
+Collecting toml>=0.7.1
+  Downloading toml-0.10.0-py2.py3-none-any.whl (25 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting wrapt~=1.11
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+Collecting typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8"
+  Downloading typed_ast-1.4.1-cp37-cp37m-manylinux1_x86_64.whl (737 kB)
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp37-cp37m-linux_x86_64.whl size=71566 sha256=845452659394c857cd7319ed8552a985d3d4cf259cee529b872a6abe418d3ec9
+  Stored in directory: /root/.cache/pip/wheels/62/76/4c/aa25851149f3f6d9785f6c869387ad82b3fd37582fa8147ac6
+Successfully built wrapt
+Installing collected packages: Click, Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask, numpy, pytz, six, python-dateutil, pandas, scipy, scikit-learn, wrapt, lazy-object-proxy, typed-ast, astroid, toml, isort, mccabe, pylint
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.4.0 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.17.2 pandas-0.24.2 pylint-2.5.0 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 toml-0.10.0 typed-ast-1.4.1 wrapt-1.12.1
+Removing intermediate container ffa4af74c220
+ ---> 48ffb93a4ca1
+Step 5/6 : EXPOSE 80
+ ---> Running in 444b213ed21e
+Removing intermediate container 444b213ed21e
+ ---> 223f077658b3
+Step 6/6 : CMD ["python", "app.py"]
+ ---> Running in 5b6b1f3380bd
+Removing intermediate container 5b6b1f3380bd
+ ---> 89043857cebc
+Successfully built 89043857cebc
+Successfully tagged mldevops:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+REPOSITORY                           TAG                 IMAGE ID            CREATED                  SIZE
+mldevops                             latest              89043857cebc        Less than a second ago   1.25GB
+<none>                               <none>              dc066f44b1f4        About a minute ago       930MB
+<none>                               <none>              950f78761841        47 minutes ago           930MB
+mustafamhasan/mldevops               latest              c5e3a35b2a9d        About an hour ago        1.24GB
+<none>                               <none>              6e19fc33abc1        About an hour ago        1.24GB
+mustafamhasan/mldevops               firsttry            53c33580119e        3 hours ago              1.24GB
+<none>                               <none>              f446a3bcd453        3 hours ago              930MB
+<none>                               <none>              602094c63a66        3 hours ago              1.24GB
+<none>                               <none>              0e42aa79f005        3 hours ago              1.24GB
+<none>                               <none>              4b3921a9d6e0        3 weeks ago              8.8GB
+scheele/udacity-restapi-user         latest              6c0a29ed160d        3 weeks ago              1.17GB
+scheele/udacity-restapi-feed         latest              8bc00a652860        3 weeks ago              1.06GB
+mustafamhasan/reverseproxy           latest              aa6cd64cfe28        3 weeks ago              19.7MB
+scheele/reverseproxy                 latest              aa6cd64cfe28        3 weeks ago              19.7MB
+<none>                               <none>              aca04d425714        3 weeks ago              19.7MB
+mustafamhasan/udacity-frontend       latest              0d47c06452d5        3 weeks ago              38.3MB
+<none>                               <none>              6e05652b773e        3 weeks ago              8.8GB
+<none>                               <none>              ec4a972a96a4        3 weeks ago              1.06GB
+<none>                               <none>              795317e59587        3 weeks ago              1.17GB
+<none>                               <none>              4315c141820f        3 weeks ago              1.17GB
+<none>                               <none>              84528fce70d5        3 weeks ago              1.17GB
+node                                 12                  88c089733a3b        4 weeks ago              916MB
+beevelop/ionic                       latest              ec034e2d5665        5 weeks ago              7.92GB
+gcr.io/k8s-minikube/kicbase          v0.0.8              11589cdc9ef4        5 weeks ago              964MB
+nginx                                alpine              377c0837328f        2 months ago             19.7MB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        2 months ago             33.1MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        6 months ago             159MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        6 months ago             207MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        6 months ago             82.4MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        6 months ago             81.1MB
+python                               3.7.3-stretch       34a518642c76        10 months ago            929MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        11 months ago            35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        11 months ago            49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        15 months ago            40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        17 months ago            258MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago              742kB
