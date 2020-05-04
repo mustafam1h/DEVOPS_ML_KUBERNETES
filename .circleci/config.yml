@@ -31,6 +31,7 @@ jobs:
             wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
                 chmod +x /bin/hadolint
             pip3 install -U pylint
+            pylint --version
 
       - save_cache:
           paths:
