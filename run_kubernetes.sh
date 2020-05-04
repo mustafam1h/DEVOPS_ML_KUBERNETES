@@ -22,3 +22,6 @@ kubectl get pods
 # Step 4:
 # Forward the container port to a host
 kubectl port-forward mldevopsdemo 8000:80
+#using minikube
+minikube start 
+minikube service mldevopsdemo

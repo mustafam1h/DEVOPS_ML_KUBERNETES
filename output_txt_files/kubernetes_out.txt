@@ -2,3 +2,31 @@ NAME           READY   STATUS    RESTARTS   AGE
 mldevopsdemo   1/1     Running   0          55m
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
+Port: 80
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+Mustafa1@PC MINGW64 /d/ND Data Analyst/new/DEVOPS/PROJECT4 (master)
+$ minikube service mldevopsdemo
+�  The control plane node must be running for this command
+�  To fix this, run: "minikube start"
+
+Mustafa1@PC MINGW64 /d/ND Data Analyst/new/DEVOPS/PROJECT4 (master)
+$ minikube start
+�  minikube v1.9.2 on Microsoft Windows 10 Enterprise 10.0.17763 Build 17763
+    ▪ KUBECONFIG=C:\Users\Mustafa\.kube\config
+✨  Using the docker driver based on existing profile
+�  Starting control plane node m01 in cluster minikube
+�  Pulling base image ...
+�  Restarting existing docker container for "minikube" ...
+�  Preparing Kubernetes v1.18.0 on Docker 19.03.2 ...
+    ▪ kubeadm.pod-network-cidr=10.244.0.0/16
+E0504 23:37:21.628224   16132 kubeadm.go:331] Overriding stale ClientConfig host https://127.0.0.1:32768 with https://127.0.0.1:32771
+�  Enabling addons: default-storageclass, storage-provisioner
+�  Done! kubectl is now configured to use "minikube"
+
+❗  C:\Program Files\7-Zip\kubectl.exe is v1.12.10-eks-ee8ff, which may be incompatible with Kubernetes v1.18.0.
+�  You can also use 'minikube kubectl -- get pods' to invoke a matching version
