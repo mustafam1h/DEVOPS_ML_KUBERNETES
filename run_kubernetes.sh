@@ -6,13 +6,14 @@
 # This is your Docker ID/path
 dockerpath="mustafamhasan/mldevops:latest"
 
+kubectl create deployment mldevopsdemo --image=$dockerpath
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run mldevopsdemo\
-    --generator=run-pod/v1\
-    --image=$dockerpath\
-    --port=80 --labels app=mldevopsdemo
+#kubectl run mldevopsdemo\
+#    --generator=run-pod/v1\
+#    --image=$dockerpath\
+#    --port=80 --labels app=mldevopsdemo
 
 # Step 3:
 # List kubernetes pods

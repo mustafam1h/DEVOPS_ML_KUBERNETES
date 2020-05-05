@@ -30,3 +30,10 @@ E0504 23:37:21.628224   16132 kubeadm.go:331] Overriding stale ClientConfig host
 
 ❗  C:\Program Files\7-Zip\kubectl.exe is v1.12.10-eks-ee8ff, which may be incompatible with Kubernetes v1.18.0.
 �  You can also use 'minikube kubectl -- get pods' to invoke a matching version
+./make_prediction.sh >> output_txt_files/kubernetes_out.txt 
+Port: 80
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
